@@ -9,3 +9,14 @@ def write_list_to_json(list, name, save_path):
      os.chdir(save_path)
      with open(name, 'w', encoding='utf-8') as f:
          json.dump(list, f, ensure_ascii=False)
+
+def write_to_txt(data, name="a"):
+    """
+     将list写入到txt文件
+     :param list:
+     :param name: 写入的txt文件名字
+     :return:
+     """
+     with open(name+'.txt', 'w') as f:
+         for i in range(len(data)):
+             f.write(data[i]+"\r")
