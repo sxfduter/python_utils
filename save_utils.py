@@ -25,8 +25,9 @@ def read_to_list(file_txt):
     """
     将txt读到list
     :param file_txt: txt文件
-    :return:
+    :return: list
     """
     data_list = []
     for line in open(file_txt, 'r'):
         data_list.append(line[:-1])
+    return data_list
