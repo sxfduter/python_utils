@@ -20,3 +20,13 @@ def write_to_txt(data, name="a"):
      with open(name+'.txt', 'w') as f:
          for i in range(len(data)):
              f.write(data[i]+"\r")
+               
+ def read_to_list(file_txt):
+     """
+     将txt读到list
+     :param file_txt: txt文件
+     :return:
+     """
+     data_list = []
+     for line in open(file_txt, 'r'):
+         data_list.append(line[:-1])
