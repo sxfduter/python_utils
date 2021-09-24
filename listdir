@@ -1,0 +1,25 @@
+import os
+import shutil
+
+def searchDirFile(rootDir, saveDir, files_path_list):
+    for dir_or_file in os.listdir(rootDir):
+         filePath = os.path.join(rootDir, dir_or_file)
+         # 判断是否为文件
+         if os.path.isfile(filePath):
+         # 如果是文件再判断是否以.jpg结尾，不是则跳过本次循环
+             if os.path.basename(filePath).endswith('.JPG'):
+                 files_path_list.append(filePath)
+                 print('imgBox fileName is '+ filePath)
+                 # 拷贝jpg文件到自己想要保存的目录下
+                 #shutil.copyfile(filePath,os.path.join(saveDir,os.path.basename(filePath)))
+             else:
+                 continue
+         elif os.path.isdir(filePath):
+              searchDirFile(filePath, saveDir, files_path_list)
+         else:
+              print('not file and dir '+os.path.basename(filePath))
+ if __name__=="__main__":
+     rootDir = "/home/hadoop-automl/cephfs/data/sunxiaofei/seg_dataset/unlabel"
+     saveDir = "./"
+     files_path_list = []
+     searchDirFile(rootDir, saveDir, files_path_list)
