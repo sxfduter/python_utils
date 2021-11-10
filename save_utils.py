@@ -1,3 +1,7 @@
+# save pic from tensor
+from torchvision import utils as vutils
+vutils.save_image(x[0], './visual9/test.jpg'.replace('test', str(np.random.randint(1, 100))), normalize=True)        
+
 def write_list_to_json(list, name, save_path):
      """
      将list写入到json文件
