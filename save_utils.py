@@ -23,7 +23,7 @@ def write_to_txt(data, name="a"):
      """
      with open(name+'.txt', 'w') as f:
          for i in range(len(data)):
-             f.write(data[i]+"\r")
+             f.write(data[i]+"\n")
                
 def read_to_list(file_txt):
     """
