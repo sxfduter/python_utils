@@ -23,3 +23,10 @@ def searchDirFile(rootDir, saveDir, files_path_list):
      saveDir = "./"
      files_path_list = []
      searchDirFile(rootDir, saveDir, files_path_list)
+     
+#遍历目录下所有文件
+     
+for root, dirs, files in os.walk(rootdir, topdown=False):
+    for i, name in enumerate(files):
+        image_path = os.path.join(root, name)
+        print(image_path)
